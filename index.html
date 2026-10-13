@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>LearnLoop AI</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                L
+            </div>
+
+            <div>
+                <h2>LearnLoop</h2>
+                <span>adaptive learning</span>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <button
+                class="nav-item active"
+                onclick="showSection('dashboard')"
+            >
+                <span>◉</span>
+                Dashboard
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showSection('diagnostic')"
+            >
+                <span>✓</span>
+                Diagnostic
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showSection('focus')"
+            >
+                <span>◎</span>
+                Where to Focus
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showSection('plan')"
+            >
+                <span>▤</span>
+                My Plan
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="mini-card">
+
+                <span class="mini-label">
+                    TODAY'S STREAK
+                </span>
+
+                <strong id="sidebarStreak">
+                    0 days
+                </strong>
+
+                <p>
+                    Keep your learning loop going.
+                </p>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <span class="eyebrow">
+                    YOUR LEARNING SPACE
+                </span>
+
+                <h1 id="pageTitle">
+                    Good to see you.
+                </h1>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <label for="subject">
+                    Subject
+                </label>
+
+                <select
+                    id="subject"
+                    onchange="changeSubject()"
+                >
+
+                    <option value="Java">
+                        Java
+                    </option>
+
+                    <option value="DSA">
+                        DSA
+                    </option>
+
+                    <option value="DBMS">
+                        DBMS
+                    </option>
+
+                </select>
+
+            </div>
+
+        </header>
+
+
+        <!-- DASHBOARD -->
+
+        <section
+            id="dashboard"
+            class="section active"
+        >
+
+            <div class="hero">
+
+                <div>
+
+                    <span class="hero-tag">
+                        ADAPTIVE LEARNING
+                    </span>
+
+                    <h2>
+                        Learn what
+                        <em>you</em>
+                        need next.
+                    </h2>
+
+                    <p>
+                        LearnLoop studies your performance,
+                        finds the topics that need attention,
+                        and builds your next study session.
+                    </p>
+
+                    <button
+                        class="primary-btn"
+                        onclick="showSection('diagnostic')"
+                    >
+                        Take diagnostic →
+                    </button>
+
+                </div>
+
+
+                <div class="hero-illustration">
+
+                    <div class="circle circle-one"></div>
+                    <div class="circle circle-two"></div>
+
+                    <div class="book">
+
+                        <div class="book-page">
+                            <span>01</span>
+                            <span>02</span>
+                            <span>03</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <span>
+                        OVERALL SCORE
+                    </span>
+
+                    <strong id="overallScore">
+                        0%
+                    </strong>
+
+                    <small>
+                        Across this subject
+                    </small>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        PRACTICE SESSIONS
+                    </span>
+
+                    <strong id="sessions">
+                        0
+                    </strong>
+
+                    <small>
+                        Completed
+                    </small>
+
+                </div>
+
+
+                <div class="stat-card accent">
+
+                    <span>
+                        STREAK
+                    </span>
+
+                    <strong id="streak">
+                        0
+                    </strong>
+
+                    <small>
+                        Days learning
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOPIC MAP -->
+
+            <div class="content-grid">
+
+                <div class="panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                YOUR MAP
+                            </span>
+
+                            <h3>
+                                Topic confidence
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="topicMap"
+                        class="topic-list"
+                    >
+                    </div>
+
+                </div>
+
+
+                <div class="panel focus-panel">
+
+                    <span class="section-label">
+                        NEXT BEST STEP
+                    </span>
+
+                    <h3>
+                        Where should you focus?
+                    </h3>
+
+                    <div id="focusContent">
+
+                        <p>
+                            Take the diagnostic to discover
+                            your weakest topics.
+                        </p>
+
+                        <button
+                            class="secondary-btn"
+                            onclick="showSection('diagnostic')"
+                        >
+                            Start diagnostic
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DIAGNOSTIC -->
+
+        <section
+            id="diagnostic"
+            class="section"
+        >
+
+            <div class="section-intro">
+
+                <span class="section-label">
+                    DIAGNOSTIC
+                </span>
+
+                <h2>
+                    Let's find your starting point.
+                </h2>
+
+                <p>
+                    Answer these questions without checking
+                    notes. Your mistakes help us personalize
+                    your next session.
+                </p>
+
+            </div>
+
+
+            <div
+                id="quizContainer"
+                class="quiz-container"
+            >
+
+                <div class="loading">
+                    Loading diagnostic...
+                </div>
+
+            </div>
+
+
+            <button
+                id="submitQuiz"
+                class="primary-btn"
+                onclick="submitQuiz()"
+            >
+                Submit diagnostic
+            </button>
+
+
+            <div
+                id="quizResult"
+                class="result-box hidden"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- FOCUS -->
+
+        <section
+            id="focus"
+            class="section"
+        >
+
+            <div class="section-intro">
+
+                <span class="section-label">
+                    WHERE TO FOCUS
+                </span>
+
+                <h2>
+                    Your learning gaps.
+                </h2>
+
+                <p>
+                    These topics need the most attention
+                    based on your recent performance.
+                </p>
+
+            </div>
+
+
+            <div
+                id="weakTopics"
+                class="weak-grid"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- PLAN -->
+
+        <section
+            id="plan"
+            class="section"
+        >
+
+            <div class="section-intro">
+
+                <span class="section-label">
+                    PERSONALIZED PLAN
+                </span>
+
+                <h2>
+                    Your next 45 minutes.
+                </h2>
+
+                <p>
+                    A focused session generated from
+                    your weakest areas.
+                </p>
+
+            </div>
+
+
+            <div
+                id="planContainer"
+                class="plan-container"
+            >
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- AI TUTOR BUTTON -->
+
+<button
+    class="tutor-button"
+    onclick="openTutor()"
+>
+    <span>✦</span>
+    Ask LearnLoop
+</button>
+
+
+<!-- AI TUTOR MODAL -->
+
+<div
+    id="tutorModal"
+    class="modal hidden"
+>
+
+    <div
+        class="modal-card"
+    >
+
+        <button
+            class="close-btn"
+            onclick="closeTutor()"
+        >
+            ×
+        </button>
+
+
+        <span class="section-label">
+            LEARNLOOP TUTOR
+        </span>
+
+        <h2>
+            What are you stuck on?
+        </h2>
+
+        <p>
+            Ask a question and I'll explain it
+            step by step.
+        </p>
+
+
+        <textarea
+            id="tutorQuestion"
+            placeholder="Example: Explain inheritance in Java..."
+        ></textarea>
+
+
+        <button
+            class="primary-btn"
+            onclick="askTutor()"
+        >
+            Explain this
+        </button>
+
+
+        <div
+            id="tutorAnswer"
+            class="tutor-answer hidden"
+        >
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

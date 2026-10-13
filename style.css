@@ -1,0 +1,1421 @@
+:root {
+
+    --paper: #f7f4ec;
+    --white: #ffffff;
+    --ink: #20251f;
+    --muted: #747970;
+
+    --blue: #315d72;
+    --blue-light: #e5eef2;
+
+    --green: #6d8b64;
+    --green-light: #e9efe6;
+
+    --orange: #c87942;
+    --orange-light: #f5e7da;
+
+    --border: #ddd9cf;
+
+    --shadow:
+        0 12px 30px rgba(32, 37, 31, 0.08);
+
+}
+
+
+* {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+body {
+
+    font-family: "DM Sans", sans-serif;
+
+    background:
+        var(--paper);
+
+    color:
+        var(--ink);
+
+}
+
+
+button,
+select,
+textarea {
+
+    font-family: inherit;
+
+}
+
+
+button {
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   APP
+===================================================== */
+
+.app {
+
+    display: flex;
+
+    min-height: 100vh;
+
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+
+    width: 245px;
+
+    background:
+        #eef1eb;
+
+    border-right:
+        1px solid var(--border);
+
+    padding:
+        28px 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 50px;
+
+}
+
+
+.brand-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: var(--blue);
+
+    color: white;
+
+    border-radius: 10px;
+
+    font-family:
+        "Libre Baskerville",
+        serif;
+
+    font-weight: bold;
+
+}
+
+
+.brand h2 {
+
+    font-size: 18px;
+
+}
+
+
+.brand span {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.nav-item {
+
+    border: 0;
+
+    background: transparent;
+
+    text-align: left;
+
+    padding: 13px 14px;
+
+    border-radius: 9px;
+
+    color: #60675e;
+
+    font-size: 14px;
+
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+
+}
+
+
+.nav-item:hover {
+
+    background: #e1e7df;
+
+}
+
+
+.nav-item.active {
+
+    background: white;
+
+    color: var(--blue);
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.04);
+
+}
+
+
+.sidebar-bottom {
+
+    margin-top: auto;
+
+}
+
+
+.mini-card {
+
+    background: #ffffff;
+
+    border:
+        1px solid var(--border);
+
+    padding: 17px;
+
+    border-radius: 12px;
+
+}
+
+
+.mini-label {
+
+    font-size: 9px;
+
+    letter-spacing: 1.3px;
+
+    color: var(--muted);
+
+}
+
+
+.mini-card strong {
+
+    display: block;
+
+    margin: 5px 0;
+
+    font-size: 22px;
+
+}
+
+
+.mini-card p {
+
+    font-size: 11px;
+
+    color: var(--muted);
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main {
+
+    flex: 1;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding:
+        30px 48px 70px;
+
+}
+
+
+/* =====================================================
+   TOPBAR
+===================================================== */
+
+.topbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.eyebrow,
+.section-label {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+
+}
+
+
+.topbar h1 {
+
+    margin-top: 5px;
+
+    font-family:
+        "Libre Baskerville",
+        serif;
+
+    font-size: 28px;
+
+}
+
+
+.top-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.top-actions label {
+
+    font-size: 12px;
+
+    color: var(--muted);
+
+}
+
+
+select {
+
+    border:
+        1px solid var(--border);
+
+    background: white;
+
+    padding:
+        10px 35px 10px 13px;
+
+    border-radius: 8px;
+
+    color: var(--ink);
+
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.section {
+
+    display: none;
+
+}
+
+
+.section.active {
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    background:
+        #dce7e9;
+
+    border-radius: 18px;
+
+    padding:
+        40px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    min-height: 320px;
+
+}
+
+
+.hero-tag {
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    color: var(--blue);
+
+    font-weight: bold;
+
+}
+
+
+.hero h2 {
+
+    font-family:
+        "Libre Baskerville",
+        serif;
+
+    font-size: 39px;
+
+    max-width: 580px;
+
+    margin:
+        14px 0;
+
+    line-height: 1.2;
+
+}
+
+
+.hero h2 em {
+
+    color: var(--orange);
+
+    font-style: normal;
+
+}
+
+
+.hero p {
+
+    max-width: 570px;
+
+    color: #5e6660;
+
+    line-height: 1.7;
+
+    margin-bottom: 24px;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.primary-btn {
+
+    background:
+        var(--blue);
+
+    color:
+        white;
+
+    border:
+        none;
+
+    padding:
+        12px 18px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+}
+
+
+.primary-btn:hover {
+
+    opacity: .9;
+
+}
+
+
+.secondary-btn {
+
+    background:
+        white;
+
+    border:
+        1px solid var(--border);
+
+    color:
+        var(--ink);
+
+    padding:
+        11px 16px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================================
+   HERO ILLUSTRATION
+===================================================== */
+
+.hero-illustration {
+
+    position: relative;
+
+    width: 260px;
+
+    min-width: 260px;
+
+}
+
+
+.circle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+}
+
+
+.circle-one {
+
+    width: 190px;
+
+    height: 190px;
+
+    background: #c7d9c6;
+
+    right: 10px;
+
+    top: 20px;
+
+}
+
+
+.circle-two {
+
+    width: 100px;
+
+    height: 100px;
+
+    background: #e9c29f;
+
+    right: 115px;
+
+    top: 145px;
+
+}
+
+
+.book {
+
+    position: absolute;
+
+    width: 150px;
+
+    height: 190px;
+
+    right: 40px;
+
+    top: 45px;
+
+    background: #fff;
+
+    border-radius: 6px;
+
+    transform:
+        rotate(7deg);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.12);
+
+}
+
+
+.book-page {
+
+    position: absolute;
+
+    inset: 17px;
+
+    border:
+        1px solid #ddd;
+
+    padding: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    color: var(--blue);
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin:
+        20px 0;
+
+}
+
+
+.stat-card {
+
+    background:
+        white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+}
+
+
+.stat-card.accent {
+
+    background:
+        #f2eadf;
+
+}
+
+
+.stat-card span {
+
+    font-size: 9px;
+
+    letter-spacing: 1.3px;
+
+    color: var(--muted);
+
+}
+
+
+.stat-card strong {
+
+    display: block;
+
+    font-size: 30px;
+
+    margin:
+        8px 0 2px;
+
+}
+
+
+.stat-card small {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================================
+   CONTENT GRID
+===================================================== */
+
+.content-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.6fr 1fr;
+
+    gap: 18px;
+
+}
+
+
+.panel {
+
+    background:
+        white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 24px;
+
+}
+
+
+.panel-heading {
+
+    margin-bottom: 20px;
+
+}
+
+
+.panel h3 {
+
+    font-family:
+        "Libre Baskerville",
+        serif;
+
+    font-size: 19px;
+
+    margin-top: 6px;
+
+}
+
+
+.topic-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+.topic-row {
+
+    display: grid;
+
+    grid-template-columns:
+        130px 1fr 50px;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.topic-name {
+
+    font-size: 13px;
+
+}
+
+
+.progress {
+
+    height: 7px;
+
+    background:
+        #ecebe5;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+
+.progress-fill {
+
+    height: 100%;
+
+    background:
+        var(--green);
+
+    border-radius: 10px;
+
+}
+
+
+.topic-score {
+
+    font-size: 12px;
+
+    text-align: right;
+
+    color: var(--muted);
+
+}
+
+
+.focus-panel {
+
+    background:
+        #f7eee5;
+
+}
+
+
+.focus-panel h3 {
+
+    margin:
+        8px 0 15px;
+
+}
+
+
+.focus-panel p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* =====================================================
+   SECTION INTRO
+===================================================== */
+
+.section-intro {
+
+    max-width: 650px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.section-intro h2 {
+
+    font-family:
+        "Libre Baskerville",
+        serif;
+
+    font-size: 30px;
+
+    margin:
+        8px 0 12px;
+
+}
+
+
+.section-intro p {
+
+    color: var(--muted);
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.question-card {
+
+    background: white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 23px;
+
+}
+
+
+.question-number {
+
+    font-size: 10px;
+
+    color: var(--orange);
+
+    letter-spacing: 1px;
+
+    font-weight: bold;
+
+}
+
+
+.question-card h3 {
+
+    font-size: 17px;
+
+    margin:
+        7px 0 17px;
+
+}
+
+
+.option {
+
+    display: block;
+
+    padding: 11px 13px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    margin-top: 8px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+}
+
+
+.option:hover {
+
+    background:
+        #f4f5f1;
+
+}
+
+
+.option input {
+
+    margin-right: 9px;
+
+}
+
+
+.result-box {
+
+    margin-top: 20px;
+
+    padding: 22px;
+
+    border-radius: 12px;
+
+    background:
+        var(--green-light);
+
+    border:
+        1px solid #cadac7;
+
+}
+
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* =====================================================
+   WEAK TOPICS
+===================================================== */
+
+.weak-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+
+}
+
+
+.weak-card {
+
+    background:
+        white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+}
+
+
+.weak-card .score {
+
+    font-size: 31px;
+
+    font-weight: 700;
+
+    margin:
+        10px 0;
+
+    color:
+        var(--orange);
+
+}
+
+
+.weak-card p {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   PLAN
+===================================================== */
+
+.plan-container {
+
+    max-width: 800px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.plan-card {
+
+    display: grid;
+
+    grid-template-columns:
+        100px 1fr;
+
+    gap: 20px;
+
+    background: white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+}
+
+
+.plan-time {
+
+    color: var(--orange);
+
+    font-weight: bold;
+
+}
+
+
+.plan-card h3 {
+
+    font-family:
+        "Libre Baskerville",
+        serif;
+
+    font-size: 16px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.plan-card p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================================
+   TUTOR BUTTON
+===================================================== */
+
+.tutor-button {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    background:
+        var(--orange);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 50px;
+
+    padding:
+        13px 19px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.18);
+
+}
+
+
+.tutor-button span {
+
+    margin-right: 6px;
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(32,37,31,.45);
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 20px;
+
+    z-index: 10;
+
+}
+
+
+.modal-card {
+
+    background:
+        var(--paper);
+
+    width:
+        min(600px, 100%);
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    position: relative;
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.modal-card h2 {
+
+    font-family:
+        "Libre Baskerville",
+        serif;
+
+    margin:
+        8px 0;
+
+}
+
+
+.modal-card p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.close-btn {
+
+    position: absolute;
+
+    right: 18px;
+
+    top: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 25px;
+
+}
+
+
+textarea {
+
+    width: 100%;
+
+    min-height: 120px;
+
+    resize: vertical;
+
+    padding: 13px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: white;
+
+    margin-bottom: 13px;
+
+    outline: none;
+
+}
+
+
+.tutor-answer {
+
+    background:
+        white;
+
+    border:
+        1px solid var(--border);
+
+    padding: 17px;
+
+    border-radius: 9px;
+
+    margin-top: 18px;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading {
+
+    color: var(--muted);
+
+    padding: 30px;
+
+    text-align: center;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+
+        width: 190px;
+
+    }
+
+    .main {
+
+        padding:
+            25px;
+
+    }
+
+    .hero {
+
+        padding: 30px;
+
+    }
+
+    .hero-illustration {
+
+        display: none;
+
+    }
+
+    .content-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .weak-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .app {
+
+        display: block;
+
+    }
+
+    .sidebar {
+
+        width: 100%;
+
+        padding: 15px;
+
+    }
+
+    .brand {
+
+        margin-bottom: 15px;
+
+    }
+
+    nav {
+
+        flex-direction: row;
+
+        overflow-x: auto;
+
+    }
+
+    .nav-item {
+
+        white-space: nowrap;
+
+    }
+
+    .sidebar-bottom {
+
+        display: none;
+
+    }
+
+    .main {
+
+        padding: 20px;
+
+    }
+
+    .topbar {
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+        flex-direction: column;
+
+    }
+
+    .stats-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .weak-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .topic-row {
+
+        grid-template-columns:
+            100px 1fr 40px;
+
+    }
+
+}
